@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NightLib": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\Users\\raul2\\Documents\\VictorCosas\\StayData.bnd"
+    }
+  }
+}

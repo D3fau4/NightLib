@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightLib", "NightLib\NightLib.csproj", "{5D43CD3C-AE8F-49D7-9DD4-10A2385712EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightLib.CLI", "NightLib.CLI\NightLib.CLI.csproj", "{4BC4DB25-E662-4B3E-BEAE-ADA1C165FB6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D43CD3C-AE8F-49D7-9DD4-10A2385712EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D43CD3C-AE8F-49D7-9DD4-10A2385712EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D43CD3C-AE8F-49D7-9DD4-10A2385712EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D43CD3C-AE8F-49D7-9DD4-10A2385712EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC4DB25-E662-4B3E-BEAE-ADA1C165FB6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC4DB25-E662-4B3E-BEAE-ADA1C165FB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC4DB25-E662-4B3E-BEAE-ADA1C165FB6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC4DB25-E662-4B3E-BEAE-ADA1C165FB6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89B4B871-6EBD-49A7-BBA3-F586DDEEEFCC}
+	EndGlobalSection
+EndGlobal
