@@ -2,7 +2,7 @@
   "profiles": {
     "NightLib.CLI": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\Users\\raul2\\Documents\\VictorCosas\\EN3.bnd"
+      "commandLineArgs": "--extract D:\\Users\\raul2\\Documents\\VictorCosas\\EN3.bnd"
     }
   }
 }

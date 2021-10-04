@@ -21,11 +21,13 @@ namespace NightLib.Files.BND
             0x6E, 0xA4, 0x69, 0x19
         };
 
+        public string Name;
         private int numofpoienters;
         public List<Files> _f;
 
         public BND(string path)
         {
+            this.Name = Path.GetFileName(path);
             _f = new List<Files>();
             var stream = DataStreamFactory.FromFile(path, FileOpenMode.Read);
             _reader = new DataReader(stream);
@@ -35,16 +37,15 @@ namespace NightLib.Files.BND
 
         private void load(DataReader reader)
         {
-            reader.SkipPadding(0x10);
+            reader.Stream.Seek(0x10, SeekOrigin.Begin);
             /* Read nº Pointers */
             this.numofpoienters = reader.ReadInt32();
-            reader.SkipPadding(0x20);
+            reader.Stream.Seek(0x20, SeekOrigin.Begin);
             var tmp = reader.Stream.Position;
 
             for (int i = 0; i < this.numofpoienters; i++)
             {
                 reader.Stream.Seek(tmp, SeekOrigin.Begin);
-
                 Files file = new Files();
                 file.FileID = reader.ReadInt32();
                 file.offset = reader.ReadInt32();

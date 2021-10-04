@@ -9,11 +9,13 @@ namespace NightLib.CLI
     {
         public static void Main(string[] args)
         {
-            BND _bnd = new BND(args[0]);
-
-            foreach (var i in _bnd._f)
+            BND _bnd = new BND(args[1]);
+            switch (args[0])
             {
-                Console.WriteLine(i.Name);
+                case "--extract":
+                    Unpacker unpacker = new Unpacker(_bnd);
+                    unpacker.Unpack();
+                    break;
             }
         }
     }
