@@ -2,7 +2,7 @@
   "profiles": {
     "NightLib.CLI": {
       "commandName": "Project",
-      "commandLineArgs": "--extract D:\\Users\\raul2\\Documents\\VictorCosas\\EN3.bnd"
+      "commandLineArgs": "--build \"C:\\Users\\raul2\\source\\repos\\D3fau4\\NightLib\\NightLib.CLI\\bin\\Debug\\net6.0\\Output\\EN3_BND.bnd\" C:\\Users\\raul2\\source\\repos\\D3fau4\\NightLib\\NightLib.CLI\\bin\\Debug\\net6.0\\Output\\EN3_BND C:\\Users\\raul2\\source\\repos\\D3fau4\\NightLib\\NightLib.CLI\\bin\\Debug\\net6.0\\Output\\filelist.json \"E:\\Users\\raul2\\Documents\\VictorCosas\\EchoNight\\Echo Night - Beyond (Europe)\\EN3.BND\""
     }
   }
 }

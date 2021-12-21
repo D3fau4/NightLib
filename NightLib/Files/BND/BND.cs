@@ -15,8 +15,8 @@ namespace NightLib.Files.BND
             public byte[] data;
         };
 
-        private DataReader _reader;
-        private static byte[] _header = {
+        public DataReader _reader;
+        private static byte[] _Rootheader = {
             0x42, 0x4E, 0x44, 0x00, 0xFF, 0xFF, 0x00, 0x00, 0xC8, 0x00, 0x00, 0x00,
             0x6E, 0xA4, 0x69, 0x19
         };
@@ -32,7 +32,11 @@ namespace NightLib.Files.BND
             var stream = DataStreamFactory.FromFile(path, FileOpenMode.Read);
             _reader = new DataReader(stream);
             load(_reader);
-            stream.Close();
+        }
+
+        public BND(List<Files> files)
+        {
+            _f = files;
         }
 
         private void load(DataReader reader)

@@ -9,12 +9,17 @@ namespace NightLib.CLI
     {
         public static void Main(string[] args)
         {
-            BND _bnd = new BND(args[1]);
+            
             switch (args[0])
             {
                 case "--extract":
+                    BND _bnd = new BND(args[1]);
                     Unpacker unpacker = new Unpacker(_bnd);
                     unpacker.Unpack();
+                    break;
+                case "--build":
+                    Repacker repacker = new Repacker(args[1], args[2], args[3], args[4]);
+                    repacker.Build();
                     break;
             }
         }

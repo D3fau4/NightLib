@@ -46,7 +46,7 @@ namespace NightLib.Files.BND
                 }
                 writer.WriteEndObject();
 
-                File.WriteAllText("meme.json", sb.ToString());
+                File.WriteAllText("filelist.json", sb.ToString(), Encoding.GetEncoding(932));
             }
         }
     }
