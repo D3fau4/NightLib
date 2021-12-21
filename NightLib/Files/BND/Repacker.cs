@@ -43,21 +43,24 @@ namespace NightLib.Files.BND
         public void Build()
         {
             _bnd._reader.Stream.Seek(0, SeekOrigin.Begin);
-            _writer.Write(_bnd._reader.ReadBytes(0x30));
-            _bnd._reader.Stream.Seek(0x30, SeekOrigin.Begin);
-            _writer.Stream.Seek(0x30, SeekOrigin.Begin);
-            tmp_offset = _bnd._f[1].offset;
-            for (int i = 1; i < _bnd._f.Count; i++)
+            _writer.Write(_bnd._reader.ReadBytes((int)_bnd._reader.Stream.Length));
+            _bnd._reader.Stream.Seek(0x20, SeekOrigin.Begin);
+            _writer.Stream.Seek(0x20, SeekOrigin.Begin);
+            tmp_offset = _bnd._f[0].offset;
+            for (int i = 0; i < _bnd._f.Count; i++)
             {
                 _writer.Write(_bnd._f[i].FileID);
-                _writer.Write(tmp_offset);
+                _writer.Write((int)tmp_offset);
+                
                 for (int c = 0; c < _f.Count; c++)
                 {
                     if (_bnd._f[i].FileID.Equals(_f[c].FileID))
                     {
+                        cmdutils.print("Writing " + _bnd._f[i].FileID + " in 0x" + tmp_offset.ToString("x"));
                         var old = _writer.Stream.Position;
                         _writer.Stream.Seek(tmp_offset, SeekOrigin.Begin);
                         _writer.Write(_f[c].data);
+                        _writer.WritePadding(00, 1000);
                         tmp_offset = _writer.Stream.Position;
                         _writer.Stream.Position = old;
                         _writer.Write(_f[c].size);
