@@ -60,7 +60,7 @@ namespace NightLib.Files.BND
                         var old = _writer.Stream.Position;
                         _writer.Stream.Seek(tmp_offset, SeekOrigin.Begin);
                         _writer.Write(_f[c].data);
-                        _writer.WriteTimes(0x00, 272);
+                        _writer.WritePadding(0x00, 2048);
                         tmp_offset = _writer.Stream.Position;
                         _writer.Stream.Position = old;
                         _writer.Write(_f[c].size);
